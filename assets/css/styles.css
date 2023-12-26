@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "mv-boli";
+  src: url("/assets/fonts/mvboli.ttf");
+}
+
+.app {
+  background: #e7ddcf;
+  width: auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "mv-boli";
+}
+
+.app .bg-image {
+  width: 90%;
+}
+
+.list {
+  position: absolute;
+  top: 23%;
+  left: 59%;
+  animation: floating 2.5s ease-in-out infinite;
+}
+.bedge {
+  cursor: pointer;
+}
+
+.hub {
+  position: absolute;
+  top: 46%;
+  left: 54.4%;
+  animation: floating 2.5s ease-in-out infinite;
+}
+
+.sweep {
+  position: absolute;
+  top: 48%;
+  left: 19.5%;
+  animation: floating 2.6s ease-in-out infinite;
+}
+
+.market {
+  position: absolute;
+  top: 57%;
+  left: 33%;
+  animation: floating 2.7s ease-in-out infinite;
+}
+
+.staking {
+  position: absolute;
+  top: 51%;
+  left: 48.3%;
+  animation: floating 2.4s ease-in-out infinite;
+}
+
+.swap {
+  position: absolute;
+  top: 32%;
+  left: 33.8%;
+  animation: floating 2.8s ease-in-out infinite;
+}
+.perps {
+  position: absolute;
+  top: 39%;
+  left: 71%;
+  animation: floating 2.9s ease-in-out infinite;
+}
+
+.docs {
+  position: absolute;
+  top: 52%;
+  left: 63%;
+  animation: floating 2.5s ease-in-out 0.6s infinite;
+}
+
+.modal-layer {
+  position: fixed;
+  background: rgba(36, 40, 39, 0.8);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal {
+  position: relative;
+  width: 468px;
+  background: #e2dccc;
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "mv-boli";
+}
+.logo-box {
+  margin-bottom: 20px;
+}
+.modal-title {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.modal-text {
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.modal-btn {
+  padding: 14px 44px;
+  background: #c9433a;
+  border: 1.5px solid rgba(36, 40, 39, 0.83);
+  border-radius: 1.25rem;
+  color: #fff;
+  cursor: pointer;
+  font-family: "mv-boli";
+}
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.open-modal {
+  display: flex;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
