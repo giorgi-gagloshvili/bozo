@@ -8,12 +8,25 @@
   </head>
   <body>
     <div class="app">
-      <img src="/assets//images/bg.png" class="bg-image" alt="bg" />
+      <img src="/assets/images/bg-mobile.png" class="bg-mobile-image" />
+      <!-- Clouds flex container -->
+      <div class="header-slider">
+        <div class="clouds">
+          <img src="/assets/images//clouds.png" alt="clouds" />
+        </div>
+        <div class="clouds">
+          <img src="/assets/images//clouds.png" alt="clouds" />
+        </div>
+      </div>
+      <!-- END Clouds flex container -->
+      <!-- <img src="/assets//images/bg.png" class="bg-image" alt="bg" /> -->
       <div
         class="bedge hub"
         data-title="Council Hub"
         data-bg="#c9433a"
         data-text="See who's on the Bozo Council"
+        data-link="https://bozocouncil.club/"
+        data-btntext="Open App"
       >
         <img src="/assets//images/bozo-hub.svg" alt="hub" />
       </div>
@@ -22,6 +35,8 @@
         data-title="Bozo docs"
         data-bg="#c9433a"
         data-text="Learn more about our apps!"
+        data-link="https://bozo.fyi/"
+        data-btntext="Open App"
       >
         <img src="/assets//images/bozo-docs.svg" alt="docs" />
       </div>
@@ -30,6 +45,9 @@
         data-title="Bozolist"
         data-bg="#c9433a"
         data-text="Apply for $BOZO airdrop"
+        data-link="https://www.bozolist.app/"
+        data-secondlink="https://bozocoin.app/"
+        data-btntext="Open App"
       >
         <img src="/assets//images/bozo-list.svg" alt="list" />
       </div>
@@ -38,6 +56,8 @@
         data-title="Bozo Swap"
         data-bg="#242827"
         data-text="Swap any of your favorite tokens using Bozoswap! $Bozo allocation earned on every trade"
+        data-link="/"
+        data-btntext="Coming Soon"
       >
         <img src="/assets//images/bozo-swap.svg" alt="swap" />
       </div>
@@ -46,6 +66,8 @@
         data-title="Marketplaces"
         data-bg="#c9433a"
         data-text="Join the Bozo Community!"
+        data-market="true"
+        data-btntext="Open App"
       >
         <img src="/assets//images/market.svg" class="market" alt="market" />
       </div>
@@ -54,6 +76,8 @@
         data-title="Bozo Perps"
         data-bg="#c9433a"
         data-text="Trade futures on many of your favorite tokens! $Bozo Allocation earned on every trade"
+        data-link="https://bozoperps.com/"
+        data-btntext="Open App"
       >
         <img src="/assets//images/perps.svg" class="perps" alt="perps" />
       </div>
@@ -62,6 +86,8 @@
         data-title="Staking"
         data-bg="#c9433a"
         data-text="Stake for some stupid points"
+        data-link="https://bozo.network/dashboard/loyalty"
+        data-btntext="Open App"
       >
         <img src="/assets//images/staking.svg" class="staking" alt="staking" />
       </div>
@@ -70,6 +96,8 @@
         data-title="Sweep2win"
         data-bg="#242827"
         data-text="Compete in an automated sweep contest and win insane Prizes!"
+        data-link="/"
+        data-btntext="Coming Soon"
       >
         <img src="/assets//images/sweep.svg" class="sweep" alt="sweep" />
       </div>
@@ -83,9 +111,58 @@
         <div class="logo-box">
           <img src="/assets/images/logo.png" alt="logo" />
         </div>
-        <h2 class="modal-title">asdlkj</h2>
-        <p class="modal-text">aslf jl lkwelkjwl klkj lkjwelfkjg</p>
-        <button class="modal-btn">Open App</button>
+        <h2 class="modal-title"></h2>
+        <p class="modal-text"></p>
+        <a href="/" class="modal-btn" target="_blank">Open App</a>
+        <div class="modal-box">
+          <h4 class="modal-box-title">Wallet Checker</h4>
+          <p class="modal-box-text">
+            Check if you are on the Bozo Airdrop List
+          </p>
+          <a href="/" class="modal-btn" id="modal-second-link" target="_blank"
+            >Open App</a
+          >
+        </div>
+        <div class="modal-button-box">
+          <div class="modal-inner-box">
+            <div>Bozo Collective</div>
+            <div class="flex">
+              <a
+                href="https://magiceden.io/marketplace/bozo_collective"
+                target="_blank"
+                class="btn-inner"
+              >
+                <img src="/assets/images/discord.svg" alt="diss" />
+              </a>
+              <a
+                href="https://www.tensor.trade/trade/bozo_collective"
+                target="_blank"
+                class="btn-inner"
+              >
+                <img src="/assets/images/diss.svg" alt="diss" />
+              </a>
+            </div>
+          </div>
+          <div class="modal-inner-box">
+            <div>Bozo Council</div>
+            <div class="flex">
+              <a
+                href="https://magiceden.io/marketplace/bozocouncil"
+                target="_blank"
+                class="btn-inner"
+              >
+                <img src="/assets/images/discord.svg" alt="diss" />
+              </a>
+              <a
+                href="https://www.tensor.trade/trade/bozo_council"
+                target="_blank"
+                class="btn-inner"
+              >
+                <img src="/assets/images/diss.svg" alt="diss" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
