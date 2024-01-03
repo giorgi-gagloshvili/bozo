@@ -9,75 +9,165 @@
   src: url("/assets/fonts/mvboli.ttf");
 }
 
+body,
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+}
+#Layer_1 {
+  display: none;
+}
+#bg-768 {
+  display: none;
+  z-index: 2;
+}
+#bg-svg-desktop {
+  z-index: 1;
+}
+.dicon {
+  cursor: pointer;
+}
+.nav-link {
+  width: 55px;
+}
+.nav-link img {
+  width: 100%;
+}
+
 .app {
   background: #e7ddcf;
-  width: auto;
+  /* background-image: url("/assets/images/bg-desktop.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "mv-boli";
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
-
+.main-header {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 1rem 2rem;
+  align-items: center;
+}
+.navbar {
+  display: flex;
+  gap: 12px;
+}
+.navbar a {
+  width: 55px;
+}
+.navbar a img {
+  width: 100%;
+}
+.header-slider,
+.header-slider-mobile {
+  display: flex;
+  position: absolute;
+  justify-content: flex-start;
+  top: 16px;
+  left: 0;
+  overflow-x: hidden;
+  animation: floating-clouds 30s linear 300ms infinite;
+}
+.header-slider-mobile {
+  display: none;
+}
+.bg-mobile-image {
+  display: none;
+}
+.clouds {
+}
+.clouds img {
+  width: 100%;
+}
 .app .bg-image {
   width: 90%;
 }
 
+@media (max-width: 1441px) {
+  .app .bg-image {
+    width: 100%;
+  }
+  .app {
+    background-size: cover;
+    /* background-image: url("/assets/images/bg.png"); */
+  }
+
+  .swap {
+    top: 32%;
+    left: 31%;
+  }
+}
+
 .list {
   position: absolute;
-  top: 23%;
-  left: 59%;
+  top: 12%;
+  left: 61%;
   animation: floating 2.5s ease-in-out infinite;
 }
 .bedge {
   cursor: pointer;
+  z-index: 2;
 }
 
 .hub {
   position: absolute;
-  top: 46%;
-  left: 54.4%;
+  top: 41%;
+  left: 55.8%;
   animation: floating 2.5s ease-in-out infinite;
 }
 
 .sweep {
   position: absolute;
-  top: 48%;
-  left: 19.5%;
+  top: 44%;
+  left: 17%;
   animation: floating 2.6s ease-in-out infinite;
 }
 
 .market {
   position: absolute;
-  top: 57%;
-  left: 33%;
+  top: 54%;
+  left: 31.5%;
   animation: floating 2.7s ease-in-out infinite;
 }
 
 .staking {
   position: absolute;
-  top: 51%;
-  left: 48.3%;
+  top: 46%;
+  left: 48.7%;
   animation: floating 2.4s ease-in-out infinite;
 }
 
 .swap {
   position: absolute;
-  top: 32%;
-  left: 33.8%;
+  top: 23%;
+  left: 32.5%;
   animation: floating 2.8s ease-in-out infinite;
 }
 .perps {
   position: absolute;
-  top: 39%;
-  left: 71%;
+  top: 33%;
+  left: 74%;
   animation: floating 2.9s ease-in-out infinite;
 }
 
 .docs {
   position: absolute;
-  top: 52%;
-  left: 63%;
+  top: 49%;
+  left: 65%;
   animation: floating 2.5s ease-in-out 0.6s infinite;
 }
 
@@ -88,14 +178,18 @@
   left: 0;
   bottom: 0;
   right: 0;
+  z-index: 3;
   display: none;
   align-items: center;
   justify-content: center;
 }
 .modal {
   position: relative;
+  background: url("/assets/images/mask-group.png") no-repeat;
+  background-size: cover;
   width: 468px;
-  background: #e2dccc;
+  background-position: center;
+  /* background: #e2dccc; */
   border-radius: 1.25rem;
   padding: 1.75rem 1.75rem 2rem;
   display: flex;
@@ -103,9 +197,9 @@
   align-items: center;
   font-family: "mv-boli";
 }
-.logo-box {
+/* .logo-box {
   margin-bottom: 20px;
-}
+} */
 .modal-title {
   font-size: 1.5rem;
   font-style: italic;
@@ -125,6 +219,20 @@
   color: #fff;
   cursor: pointer;
   font-family: "mv-boli";
+  text-decoration: none;
+  font-weight: bold;
+  display: none;
+}
+.modal-btn-bottom {
+  padding: 14px 44px;
+  background: #c9433a;
+  border: 1.5px solid rgba(36, 40, 39, 0.83);
+  border-radius: 1.25rem;
+  color: #fff;
+  cursor: pointer;
+  font-family: "mv-boli";
+  font-weight: bold;
+  text-decoration: none;
 }
 .modal-close {
   position: absolute;
@@ -133,7 +241,53 @@
   cursor: pointer;
 }
 .open-modal {
+  display: flex !important;
+}
+.flex {
   display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0px 30px;
+}
+.btn-inner {
+  width: 53px;
+}
+.btn-inner img {
+  width: 100%;
+  cursor: pointer;
+}
+.modal-box {
+  background-color: #242827;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 1.25rem;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.75rem;
+}
+.modal-box-title {
+  color: #e2dccc;
+  margin-bottom: 12px;
+  line-height: 24px;
+}
+.modal-box-text {
+  color: #fff;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.modal-button-box {
+  display: none;
+  gap: 8px;
+}
+.modal-inner-box {
+  background-color: #242827;
+  border-radius: 20px;
+  color: #fff;
+  display: flex;
+  padding: 0.5rem 0;
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes floating {
@@ -147,5 +301,308 @@
 
   100% {
     transform: translateY(0px);
+  }
+}
+
+@keyframes floating-clouds {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1441px) {
+  .app .bg-image {
+    width: 100%;
+  }
+  .app {
+    background-size: cover;
+  }
+  .sweep {
+    top: 49%;
+    left: 14.4%;
+  }
+  .swap {
+    top: 31%;
+    left: 31%;
+  }
+
+  .hub {
+    top: 47%;
+    left: 55.5%;
+  }
+
+  .market {
+    top: 58%;
+    left: 30%;
+  }
+
+  .staking {
+    top: 51%;
+    left: 48.3%;
+  }
+
+  .perps {
+    top: 39%;
+    left: 75%;
+  }
+  .list {
+    top: 22%;
+    left: 61.5%;
+  }
+
+  .docs {
+    top: 54%;
+    left: 66.5%;
+  }
+}
+
+.bedge-container {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  html {
+    overflow-y: auto;
+  }
+  .logo-box {
+    margin-bottom: 0px;
+  }
+  .header-slider-mobile {
+    display: flex;
+  }
+
+  .header-slider {
+    display: none;
+  }
+  #bg-svg-desktop {
+    display: none;
+  }
+  #bg-768 {
+    display: block;
+  }
+  #Layer_1 {
+    display: none;
+  }
+  .app {
+    background-image: none;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-position: center top;
+  }
+
+  .bg-mobile-image {
+    display: block;
+    width: 100%;
+    visibility: hidden;
+  }
+  .modal-layer {
+    padding: 0 26px;
+  }
+  .modal-button-box {
+    flex-direction: column;
+  }
+  .sweep {
+    top: 198%;
+    left: 21.4%;
+  }
+  .swap {
+    top: 65%;
+    left: 23%;
+  }
+
+  .hub {
+    top: 106%;
+    left: 76%;
+  }
+
+  .market {
+    top: 136%;
+    left: 30%;
+  }
+
+  .staking {
+    top: 275%;
+    left: 46.3%;
+  }
+
+  .perps {
+    top: 157%;
+    left: 70%;
+  }
+  .list {
+    top: 41%;
+    left: 68.5%;
+  }
+
+  .docs {
+    top: 238%;
+    left: 71.5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    /* background-image: url("/assets/images/bg-mobile.png"); */
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-position: center top;
+  }
+  .bg-mobile-image {
+    display: block;
+    width: 100%;
+    visibility: hidden;
+  }
+  .sweep {
+    top: 129%;
+    left: 18.4%;
+  }
+  .swap {
+    top: 40%;
+    left: 21%;
+  }
+
+  .hub {
+    top: 67%;
+    left: 73%;
+  }
+
+  .market {
+    top: 87%;
+    left: 27%;
+  }
+
+  .staking {
+    top: 180%;
+    left: 43.3%;
+  }
+
+  .perps {
+    top: 101%;
+    left: 68%;
+  }
+  .list {
+    top: 24%;
+    left: 65.5%;
+  }
+
+  .docs {
+    top: 156%;
+    left: 69.5%;
+  }
+}
+
+@media (max-width: 440px) {
+  .app {
+    /* background-image: url("/assets/images/bg-mobile.png"); */
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-position: center top;
+  }
+  .bg-mobile-image {
+    display: block;
+    width: 100%;
+    visibility: hidden;
+  }
+  .sweep {
+    top: 115%;
+    left: 18.4%;
+  }
+  .swap {
+    top: 35%;
+    left: 21%;
+  }
+
+  .hub {
+    top: 62%;
+    left: 73%;
+  }
+
+  .market {
+    top: 82%;
+    left: 27%;
+  }
+
+  .staking {
+    top: 163%;
+    left: 43.3%;
+  }
+
+  .perps {
+    top: 95%;
+    left: 68%;
+  }
+  .list {
+    top: 20%;
+    left: 65.5%;
+  }
+
+  .docs {
+    top: 140%;
+    left: 69.5%;
+  }
+}
+
+@media (max-width: 414px) {
+  .app {
+    /* background-image: url("/assets/images/bg-mobile.png"); */
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-position: center top;
+  }
+
+  #bg-768 {
+    display: none;
+  }
+  #Layer_1 {
+    display: block;
+  }
+  .bg-mobile-image {
+    display: block;
+    width: 100%;
+    visibility: hidden;
+  }
+  .sweep {
+    top: 110%;
+    left: 18.4%;
+  }
+  .swap {
+    top: 33%;
+    left: 21%;
+  }
+
+  .hub {
+    top: 57%;
+    left: 73%;
+  }
+
+  .market {
+    top: 74%;
+    left: 27%;
+  }
+
+  .staking {
+    top: 154%;
+    left: 43.3%;
+  }
+
+  .perps {
+    top: 86%;
+    left: 68%;
+  }
+  .list {
+    top: 19%;
+    left: 65.5%;
+  }
+
+  .docs {
+    top: 133%;
+    left: 69.5%;
   }
 }
